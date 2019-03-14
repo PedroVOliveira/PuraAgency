@@ -1,0 +1,78 @@
+// We use two variables:
+//
+//    $colors  - Map from colors default from the project.
+//    $palette - Tonality from the colors primarys, secondarys, etc.
+//
+// Map from colors default from the project. 
+
+$colors: (
+  black: #000,
+  gray: #717171,
+  white: #fff,
+  pink: #fd3fa0,
+  
+
+	// semantic colors // sucess, error, information
+	semantic:(
+		sucess:  #12bc00,
+		info:    #0a84ff,
+		warning: #d76e00,
+		error:   #d70022
+	),
+  
+);
+
+// Color = cl
+// Colors function
+@function cl($color-name, $color-variant: null) {
+
+  // color variant is optional
+  @if ($color-variant != null) {
+
+    @if map-has-key($colors, $color-name) {
+
+      @return map-get(map-get($colors, $color-name), $color-variant);
+
+    }
+
+  } @else {
+
+    @return map-get($colors, $color-name);
+
+  }
+
+  @warn "Unknown `#{$color-name}` in $palettes.";
+
+  @return null;
+}
+
+// Construction
+@mixin make-color($name: color){
+
+  @each $theme in map-keys($colors) {
+
+    @each $length in map-get($colors, $theme) {
+
+      @if ( length($length) >= 2 ) {
+
+        .#{$name}-#{$theme}-#{ nth($length, 1) },
+
+        %#{$name}-#{$theme}-#{ nth($length, 1) }{
+
+          color: nth($length, 2);
+
+        }
+
+      } @else {
+
+        .#{$name}-#{$theme}
+
+        %#{$name}-#{$theme}{
+
+          color: #{ nth($length, 1) };
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.#{$prefix}-menu {
+
+	@include flexBox( flex, center, center, inherit, inherit, 55% );
+	height: rem(100);
+
+    @include respond-to( lg ) {
+        flex-basis: 60%;
+    }
+
+	@include e('item') {
+    	flex-basis: rem(100);
+    	text-align: center;
+
+    	.link {
+    		@extend %transition;
+    		@include typography( 600, 16, $font-default );
+    		color: cl(white);
+
+    		&:hover {
+    			color: cl(pink);
+    		}
+    	}
+
+    }
+    		
+}

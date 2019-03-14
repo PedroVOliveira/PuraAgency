@@ -1,0 +1,48 @@
+//Box Full
+%boxFull {
+    float: left;
+    width: 100%;
+}
+
+// Espaçamento 
+%offsetMargin {
+	margin: rem(30) 0;
+
+	@include respond-to( sm ) {
+		margin: rem(60) 0;
+	}
+	
+	@include respond-to( md ) {
+		margin: rem(90) 0;
+	}
+	
+	@include respond-to( lg ) {
+		margin: rem(120) 0;
+	}
+}
+
+// Posicionamento
+%pAbsolute { 
+    position: absolute;
+}
+
+%pRelative { 
+    position: relative;
+}
+
+%pFixed { 
+    position: fixed; 
+}
+
+%pStatic { 
+    position: static; 
+}
+
+
+// Transição
+%transition {
+    transition: all .2s ease-in-out;
+}
+
+
+

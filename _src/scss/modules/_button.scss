@@ -1,0 +1,24 @@
+/*------------------
+|	BUTTONS
+|------------------*/
+
+.#{$prefix}-btn{
+	$self: &;
+	//@include fonts($bold: 400, $size: 14, $font: $font-default);
+	@include size(initial, rem(30));
+	//background: linear-gradient(to bottom right, cl(purple), cl(purple));
+	color: cl(White); 
+	text-transform: uppercase;	
+    line-height: 1;
+    padding: 0 rem(20);
+
+ 	
+ 	
+	&:hover{
+		background: cl(blueDefault);
+	}
+	
+	
+
+	
+}

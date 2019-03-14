@@ -1,0 +1,23 @@
+.#{$prefix}-redes {
+    display: flex;
+    flex-basis: 15%; 
+    justify-content: flex-end;
+    
+    @include respond-to( lg ) {
+        flex-basis: 20%;
+    }
+
+	.link {
+        @extend %transition;
+		color: cl(white);
+        font-size: rem(22);
+        flex-basis: rem(40);
+		
+        &:hover {
+			color: cl(pink);
+		}
+	}
+
+    
+    		
+}

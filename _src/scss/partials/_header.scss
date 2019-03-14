@@ -1,0 +1,28 @@
+.#{$prefix}-header {
+    $self: &;
+    @extend %boxFull;
+    position: relative;
+    z-index: 9;
+   	
+   	@include e( 'nav' ) {
+   		@include flexBox( flex, center, space-between, inherit, inherit, inherit );
+   	}
+   	
+   	@include e( 'brand' ) {
+   		flex-basis: 15%;
+   		
+   		a {
+   			font-size: 0;
+
+   			.logo {
+   				margin-bottom: rem(-12);
+   			}
+   		}
+
+   		@include respond-to( lg ) {
+   			flex-basis: 20%;
+   		}
+   	}
+}
+
+

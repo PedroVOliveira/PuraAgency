@@ -1,0 +1,71 @@
+.#{$prefix}-toggle {
+  cursor: pointer; 
+  flex-basis: 10%;
+  position: fixed;
+  right: 3%;
+  z-index: 9;
+
+  &:before {
+    @include size( rem(50), rem(45) );
+    background: cl( white );
+    content: '';
+    left: rem(-5);
+    position: absolute;
+    top: rem(-19);
+  }
+
+  span {
+    @include size( rem(40), rem(6) );
+    background-color: cl(pink); 
+    display: block; 
+    position: relative; 
+   
+
+    &:after, 
+    &:before {
+      @include size( rem(40), rem(6) );
+      background-color: rgba(253, 63, 160, 0.5803921568627451);
+      content: ""; 
+      position: absolute; 
+      top: rem(-12); 
+      transition: all 0.3s; 
+    }
+
+    &:after{ 
+      top: rem(12);
+    }
+  }
+
+  &.on span {
+    background-color: transparent;
+    
+    &:before { 
+      background-color: cl( pink ); 
+      transform: rotate( 45deg ) translate( rem(9), rem(9) ); 
+    }
+  }
+
+  &.on span {
+    
+    &:after { 
+      background-color: cl( pink );
+      transform: rotate( -45deg ) translate( rem(7), rem(-8) ); 
+    }
+  }
+
+  &.on + .pa-menu { 
+    @include size( 100%, 100vh );
+    background: cl( white );
+    display: flex; 
+    flex-direction: column;
+    left: 0; 
+    justify-content: center;
+    position: fixed; 
+    top: 0;
+    z-index: -1; 
+  }
+
+  @include respond-to( md ) {
+    display: none;
+  }
+}

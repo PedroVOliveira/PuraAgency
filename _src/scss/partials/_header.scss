@@ -5,7 +5,10 @@
     z-index: 9;
    	
    	@include e( 'nav' ) {
-   		@include flexBox( flex, center, space-between, inherit, inherit, inherit );
+   		height: rem(90);
+
+      @include flexBox( flex, center, space-between, inherit, inherit, inherit );
+      
    	}
    	
    	@include e( 'brand' ) {

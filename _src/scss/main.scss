@@ -50,11 +50,28 @@
 			}
 
 			.title {
-				@include typography( 700, 50, $font-default );
+				@include typography( 700, 41, $font-default );
 			    align-items: center;
 				display: flex;
 			    flex-direction: column;
 			    text-align: center;
+
+
+			    @include respond-to( sm ) {
+			    	font-size: rem(60);
+			    }
+			    
+			    @include respond-to( md ) {
+			    	font-size: rem(50);
+			    }
+
+			    span {
+			    	display: none;
+
+			    	@include respond-to( sm ) {
+			    		display: flex;
+			    	}
+			    }
 			}
 
 		}

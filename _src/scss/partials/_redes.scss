@@ -1,8 +1,13 @@
 .#{$prefix}-redes {
-    display: flex;
-    flex-basis: 15%; 
-    justify-content: flex-end;
     
+    display: none;
+
+    @include respond-to( md ) {
+        display: flex;
+        flex-basis: 15%; 
+        justify-content: flex-end;
+    }
+
     @include respond-to( lg ) {
         flex-basis: 20%;
     }

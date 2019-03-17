@@ -1,24 +1,47 @@
 .#{$prefix}-menu {
+    display: none;
 
-	@include flexBox( flex, center, center, inherit, inherit, 55% );
-	height: rem(100);
+    @include respond-to( md ) {
+
+       @include flexBox( flex, center, center, inherit, inherit, 55% );
+	   height: rem(100);
+        
+    }
 
     @include respond-to( lg ) {
         flex-basis: 60%;
     }
 
 	@include e('item') {
-    	flex-basis: rem(100);
-    	text-align: center;
+        flex-basis: rem(55);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        @include respond-to( sm ) {
+            text-align: center;
+    	    flex-basis: rem(100);
+        }
 
     	.link {
     		@extend %transition;
-    		@include typography( 600, 16, $font-default );
-    		color: cl(white);
+    		@include typography( 600, 22, $font-default );
+            color: cl(black);
+            
 
-    		&:hover {
-    			color: cl(pink);
-    		}
+            &:hover {
+                color: cl(pink);
+            }
+
+
+            @include respond-to( sm ) {
+              font-size: rem(30);
+            }
+
+            @include respond-to( md ) {
+              color: cl(white);
+              font-size: rem(16);
+            }
     	}
 
     }

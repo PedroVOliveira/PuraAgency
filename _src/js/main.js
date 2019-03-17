@@ -5,7 +5,22 @@ jQuery(function($) {
   
   $(document).ready(function() {
     
-    
+    $(".pa-toggle").on("click", function() {
+        
+        
+        if ( $( this ).hasClass( 'on' ) ) {
+            
+            $(this).removeClass('on');
+
+            $(".pa-menu").stop().fadeOut();
+
+        } else {
+
+        	$(this).addClass('on');
+
+            $(".pa-menu").stop().fadeIn();
+        }
+    });
     
   });
 

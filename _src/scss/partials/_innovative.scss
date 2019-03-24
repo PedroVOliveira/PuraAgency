@@ -1,0 +1,32 @@
+.#{$prefix}-services {
+	display: flex;
+	justify-content: flex-end;
+
+
+	@include e( 'content' ) {
+		display: flex;
+		flex-direction: column;
+
+		@include respond-to( md ) {
+			flex-basis: 47%;
+		}
+		
+	}
+
+	@include e( 'title' ) {
+		@include typography( 700, 30, $font-default );
+
+		@include respond-to( sm ) {
+			font-size: rem(40);
+		}
+
+		span {
+			color: cl( pink );
+		}
+	}
+
+	.paragraph {
+		@include typography( 100, 20, $font-default );
+		margin: rem(30) rem(0);
+	}
+}

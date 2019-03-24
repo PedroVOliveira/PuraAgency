@@ -1,0 +1,25 @@
+.#{$prefix}-icon {
+	@include bkgImage( 'sprites.png', inherit, no-repeat, inherit, inherit, inherit );
+	width: rem(50);
+	height: rem(50);
+	display: inline-block;
+
+
+	@include m( unique ) {
+		background-position: rem(10) rem(1);
+	}
+
+	@include m( 'feature' ) {
+		background-position: rem(-30) rem(5);
+	}
+
+	@include m( 'design' ) {
+		background-position: rem(-78) rem(6);
+
+	}
+
+	@include m( 'more' ) {
+		background-position: rem(-133) rem(6);
+
+	}
+}

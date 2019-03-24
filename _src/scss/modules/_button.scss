@@ -1,24 +1,63 @@
 /*------------------
 |	BUTTONS
 |------------------*/
+.#{$prefix}-btn {
 
-.#{$prefix}-btn{
 	$self: &;
-	//@include fonts($bold: 400, $size: 14, $font: $font-default);
-	@include size(initial, rem(30));
-	//background: linear-gradient(to bottom right, cl(purple), cl(purple));
-	color: cl(White); 
-	text-transform: uppercase;	
-    line-height: 1;
-    padding: 0 rem(20);
+    @extend %transition;
+    @include typography( 600, 16, $font-default );
+	align-items: center;
+	background: cl( pink );
+    border: rem(2) solid;
+	color: cl( white );
+	display: inline-flex;
+	justify-content: center;
+	padding: rem(10);
+	width: rem(300);
 
- 	
- 	
 	&:hover{
-		background: cl(blueDefault);
+		background: linear-gradient(-140deg, cl( redSlim ), cl( pink ));
 	}
-	
-	
 
+	&:active {
+		box-shadow: 0;
+		transform: translatey(1px);
+	}
+
+	$mods : white black green gray pink primary;
 	
+	@each $color in $mods {
+
+        @include m( $color ) {
+            background-color: cl( $color ) $i;
+        	
+        	@if $color == white {
+               
+                color: cl( white ) $i;
+            }
+
+            &:hover {
+				background: linear-gradient(-140deg, cl( pink ), cl( redSlim ));
+            }
+        }
+    }
+
+
+    @include m('small'){
+        width: rem(185);
+        height: rem(57);
+    }
+
+    @include m('medium'){
+		max-width: rem(220);
+        padding: rem(15);
+	}
+
+    @include m('disabled'){
+        background: mix( cl( gray ), cl( white ), 20%) $i;
+        color: mix( cl( gray ), cl( white ), 50%) $i;
+        pointer-events: none;
+        cursor: default;
+    }
+
 }

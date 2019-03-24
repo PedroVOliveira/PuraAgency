@@ -86,6 +86,45 @@
 	@include m( 'about-options' ) {
 		@extend %not-offsetMargin;
 	}
+	
+	@include m( 'services' ) {
+		position: relative;
+		height: rem(690);
+
+		@include respond-to( md ) {
+			height: rem(502);
+		}
+
+		&:before {
+			@include bkgImage( 'notbook.png', cl( white ), no-repeat, inherit, contain, inherit );
+			content: '';
+			width: 100%;	
+			height: rem(200);
+			position: absolute;
+			bottom: rem(0);
+
+			@include respond-to( sm ) {
+				height: rem(350);
+			}
+
+			@include respond-to( md ) {
+				width: 50%;
+				height: rem(460);
+			}
+
+			@include respond-to( lg ) {
+				bottom: rem(0);
+				height: rem(502);
+			}
+		}
+	}
+
+
+	@include m( 'features' ) {
+		@extend %not-offsetMargin;
+		@extend %offsetPadding;
+		background: cl( grayDark );
+	}
 }
 
 

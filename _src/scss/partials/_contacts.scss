@@ -1,0 +1,72 @@
+.#{$prefix}-contact {
+	display: flex;
+	flex-direction: column;
+	
+	@include respond-to( md ) {
+    	margin: 0 auto;
+		max-width: 70%;
+	}
+
+	@include e( 'title' ) {
+		@include typography( 700, 40, $font-default );
+		color: cl( black );
+		margin-bottom: rem(30);
+		text-align: center;
+
+		@include respond-to( sm ) {
+			margin-bottom: rem(60);
+			font-size: rem(50);
+		}
+	}
+}
+
+
+.#{$prefix}-form {
+	display: flex;
+	flex-direction: column;
+
+	@include e( 'row' ) {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+
+		@include respond-to( sm ) {
+			flex-direction: row;
+		}
+
+		input,textarea,select {
+			@include typography( 100, 16, $font-default );
+			border: rem(1) solid cl( gray );
+			height: rem(60);
+    		margin-bottom: rem(30);
+    		padding: rem(15);
+			resize: none;
+			width: 100%;
+		}
+
+		textarea {
+			height: rem(190);
+		}
+
+		@include m( 'center' ) {
+			justify-content: center;
+			align-items: center;
+
+			@include respond-to( sm ) {
+				align-items: inherit;
+			}
+		}
+	}
+
+	@include e( custom ) {
+		flex-basis: 49%;
+	}
+	
+
+	@include e( send ) {
+		text-align: center;
+		cursor: pointer;
+
+
+	}
+}

@@ -54,11 +54,11 @@
   }
 
   &.on + .pa-menu { 
-    @include size( 100%, 100vh );
+    @include size( 50%, 100vh );
     background: cl( white );
     display: flex; 
     flex-direction: column;
-    left: 0; 
+    right: 0; 
     justify-content: center;
     position: fixed; 
     top: 0;

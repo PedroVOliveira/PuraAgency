@@ -3,8 +3,13 @@
 	flex-direction: column;
 
 	@include e( 'title' ) {
-		@include typography( 700, 40, $font-default );
-		margin-bottom: rem(60);
+		@include typography( 700, 30, $font-default );
+		margin-bottom: rem(30);
+
+		@include respond-to( sm ) {
+			font-size: rem(40);
+			margin-bottom: rem(60);
+		}
 	}
 	
 	@include e( 'legend' ) {

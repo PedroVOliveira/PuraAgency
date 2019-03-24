@@ -63,6 +63,31 @@ jQuery(function($) {
     });
 
 
+    $('#pa-contact').submit(function () {
+
+      var data = {
+
+        'name':     $( '#name'    ).val(),
+        'email':    $( '#email'   ).val(),
+        'phone':    $( '#phone'   ).val(),
+        'subject':  $( '#subject' ).val(),
+        'message':  $( '#message' ).val(),
+
+      }
+      
+      alert('Mensagem enviada com sucesso!');
+      $('#pa-contact').trigger("reset");
+      console.log(data);
+
+
+    });
+
+
+    $("#subject option:first").text('-- Select subject --').addClass('disabled');
+    
+    $("#phone").mask("(99)9999-9999?9");
+
+
   });
 
 });

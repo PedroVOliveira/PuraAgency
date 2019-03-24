@@ -21,6 +21,28 @@
 	}
 }
 
+%offsetPadding {
+	padding: rem(30) 0;
+
+	@include respond-to( sm ) {
+		padding: rem(60) 0;
+	}
+	
+	@include respond-to( md ) {
+		padding: rem(90) 0;
+	}
+	
+	@include respond-to( lg ) {
+		padding: rem(120) 0;
+	}
+}
+
+
+%not-offsetMargin {
+	margin: 0;
+}
+
+
 // Posicionamento
 %pAbsolute { 
     position: absolute;

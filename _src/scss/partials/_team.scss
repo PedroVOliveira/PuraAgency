@@ -1,0 +1,37 @@
+.#{$prefix}-team {
+	display: flex;
+	flex-direction: column;
+
+	@include e( 'title' ) {
+		@include typography( 700, 40, $font-default );
+		margin-bottom: rem(60);
+	}
+	
+	@include e( 'legend' ) {
+		@include typography( 700, 25, $font-default );
+		text-align: center;
+    	margin-top: rem(25);
+	}
+}
+
+
+##{$prefix}-owl-team {
+
+	.owl-controls {
+
+
+		.owl-dots {
+			bottom: rem(0);
+    		position: relative;
+            
+            .owl-dot.active{
+                background-color: cl( gray );
+            }
+			.owl-dot {
+				background-color: cl( graySlim );
+				width: rem(10);
+    			height: rem(10);
+			}
+		}
+	}
+}

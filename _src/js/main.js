@@ -21,7 +21,48 @@ jQuery(function($) {
             $(".pa-menu").stop().fadeIn();
         }
     });
-    
+
+
+    $(function () {
+      $('a[href*="#"]:not([href="#"])').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 1000, 'linear');
+      });
+    });
+
+
+
+
+    $("#pa-owl-team").owlCarousel({
+        items: 1,
+        mouseDrag: false,
+        lazyLoad:true,
+        nav: false,
+        dots: true,
+        loop: true,
+        margin: 30,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: true,
+        navText: false,
+        responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 2,
+              nav: false,
+              dots: true
+            },
+            1000: {
+              items: 3,
+              nav: false,
+              dots: false
+            }
+      }
+    });
+
+
   });
 
 });

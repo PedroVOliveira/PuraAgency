@@ -1,5 +1,268 @@
 .#{$prefix}-footer {
 	@extend %boxFull;
-	
+	@extend %offsetPadding;
+	border-top: rem(1) solid cl(graySemiBold); 
+	position: relative;
+
+
+	&:after {
+		content: '';
+		background-color: rgba(230, 230, 230, 0.9);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		//mix-blend-mode: multiply;
+		z-index: -1;
+	}
+
+	.address-title {
+		@include typography( 700, 18, $font-default );
+		color: cl( black );
+		margin-bottom: rem(10);
+
+		@include respond-to( sm ) {
+			margin-bottom: rem(20);
+		}
+
+		@include respond-to( md ) {
+			margin-bottom: rem(40);
+		}
+	}
 }
 
+
+// company description
+.#{$prefix}-company {
+	display: flex;
+	justify-content: space-between; 
+	flex-direction: column;
+
+
+	@include respond-to( md ) {
+		flex-direction: row;
+	}
+
+	@include e( 'info' ) {
+		margin-bottom: rem(30);
+		
+		@include respond-to ( md ) {
+			flex-basis: 40%;
+			margin-bottom: rem(0);
+		}
+
+		.link {
+			font-size: rem(0);
+
+
+			.logo {
+				max-width: 70%;
+
+				@include respond-to( sm ) {
+					max-width: 100%;
+				}
+			}
+		}
+
+		.paragraph {
+			display: none;
+
+			@include respond-to( md ) {
+				@include typography( 100, 16, $font-default );
+				color: cl( black );
+				display: flex;
+				line-height: rem(30);
+				margin-top: rem(40);
+			}
+
+		}
+		
+	}
+	
+
+	@include e( 'contacts' ) {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		
+
+		@include respond-to ( md ) {
+			flex-basis: 50%;		
+			flex-direction: row;
+			
+		}
+	}
+}
+
+
+// col twitter
+.#{$prefix}-col-twitter {
+	display: none;
+
+	@include respond-to ( sm ) {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 45%;
+		margin-bottom: rem(20);
+	}
+
+	@include respond-to ( md ) {
+		flex-basis: 40%;
+		margin-bottom: rem(0);
+	}
+
+
+	@include e( 'infos' ) {
+		@include typography( 100, 16, $font-default );
+		color: cl( black );
+
+		@include respond-to( sm ) {
+			font-size: rem(18);
+		}
+
+		@include respond-to( md ) {
+			font-size: rem(16);
+		}
+
+
+		h4 {
+			color: cl( pink );
+			font-weight: 700;
+		}
+
+		p {
+			display: none;
+
+			@include respond-to( sm ) {
+				display: flex;
+				line-height: rem(30);	
+				margin-top: rem(30);
+			}
+		}
+	}
+}
+
+// col networks
+.#{$prefix}-col-networks {
+	
+
+	@include respond-to ( sm ) {
+		flex-basis: 45%;
+	}
+
+	@include respond-to ( md ) {
+		flex-basis: 50%;
+	}
+
+
+
+	@include e( 'infos' ) {
+		@include typography( 100, 16, $font-default );
+		color: cl( black );
+
+		@include respond-to( sm ) {
+			font-size: rem(18);
+		}
+		
+		@include respond-to( md ) {
+			font-size: rem(16);
+		}
+	}
+}
+
+
+
+// networks cards
+.#{$prefix}-networks-cards {
+
+
+	@include respond-to( sm ) {
+		margin-top: rem(30);
+	}
+
+	@include e( 'icon-card' ) {
+		margin: rem(20) rem(0);
+		display: flex;
+		align-items: center;
+
+
+
+		@include respond-to( sm ) {
+			margin: rem(30) rem(0);
+		}
+
+		@include respond-to( md ) {
+			margin: rem(20) rem(0);
+		}
+
+
+
+
+		.icon {
+			color: cl( pink );
+	    	margin-right: rem(5);
+		    text-align: center;
+		    width: rem(22);
+		    font-size: rem(18);
+
+		    @include respond-to( sm ) {
+		    	font-size: rem(28);
+	    		margin-right: rem(20);
+		    }
+		    
+		    @include respond-to( md ) {
+	    		margin-right: rem(5);
+		    	font-size: rem(18);
+		    }
+
+		}
+
+		.link {
+			@extend %transition;
+			@include typography( 100, 16, $font-default );
+			color: cl( black );
+
+			&:hover {
+				color: cl( pink );
+			}
+
+			@include respond-to( sm ) {
+				font-size: rem(18);
+			}
+			
+			@include respond-to( md ) {
+				font-size: rem(16);
+			}
+		}
+	}
+}
+
+
+// networks
+.#{$prefix}-networks {
+	margin: rem(10) rem(0) rem(10);
+	display: flex;
+
+	.link {
+		color: cl( pink );
+		font-size: rem(25);
+		width: rem(50);
+	}
+}
+
+
+// copyright
+.#{$prefix}-copy-right {
+	@extend %boxFull;
+	@include typography( 400, 14, $font-default );
+    background: cl( graySlim );
+    border-top: rem(1) solid cl(graySemiBold);
+	color: cl( black );
+	line-height: 1;
+	padding: rem(20) rem(0);
+	text-align: center;
+
+	@include respond-to( sm ) {
+		font-size: rem(16);
+	}
+}

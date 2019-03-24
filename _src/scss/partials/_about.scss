@@ -1,0 +1,151 @@
+.#{$prefix}-about {
+
+	@include e( 'title' ) {
+		@include typography( 700, 30, $font-default );
+		color: cl( white );
+		margin-bottom: rem(30);
+
+		@include respond-to( sm ) {
+			font-size: rem(45);
+		}
+	}
+	
+	@include e( 'desc' ) {	
+		@include typography( 400, 16, $font-default );
+		color: cl( white );
+
+		@include respond-to( sm ) {
+			font-size: rem(25);
+		}
+		
+		@include respond-to( md ) {
+			font-size: rem(34);
+		}
+
+	}
+}
+
+
+.#{$prefix}-about-options { 
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-top: rem(15);
+
+	@include respond-to( sm ) {
+		flex-direction: row;
+		margin-top: rem(0);
+	}
+
+	@include e( 'item' ) {
+		flex-basis: 31%;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: flex-end;
+	    min-height: rem(326);
+		position: relative;
+		padding: rem(70) rem(15) rem(35);
+
+
+		&:before {
+			@include typography( 700, 108, $font-default );
+			bottom: rem(180);
+			content: '01';
+			color: cl( pinkSlim );
+			position: absolute;
+			z-index: -1;
+
+			@include respond-to( sm ) {
+				bottom: rem(80);
+			}
+			
+			@include respond-to( md ) {
+				bottom: rem(40);
+			}
+		}
+
+		&:hover {
+			background: linear-gradient(-140deg, cl( redSlim ), cl( pink ));
+
+			&:after {
+				@include typography( 700, 70, $font-default );
+				content: '01';
+				color: cl( white );
+				position: absolute;
+				top: rem(10);
+
+				@include respond-to( md ) {
+					top: rem(20);
+				}
+
+				animation: fadeInUp .9s ease-in-out 0.01s forwards;
+        		opacity: 0;
+
+			}
+
+			.title {
+				animation: fadeInUp .9s ease-in-out 0.01s forwards;
+				color: cl( white );
+        		opacity: 0;
+			}
+
+			.desc {
+				animation: fadeInUp .9s ease-in-out 0.01s forwards;
+				color: cl( white );
+        		opacity: 0;
+			}
+		}
+
+		@include m( '02' ) {
+
+			&:before {
+				content: '02';
+			}
+
+			&:hover {
+
+				&:after {
+					content: '02';
+				}
+			}
+
+		}
+
+		@include m( '03' ) {
+
+			&:before {
+				content: '03';
+			}
+
+			&:hover {
+
+				&:after {
+					content: '03';
+				}
+
+			}
+		}
+
+
+		@include respond-to( md ) {
+			padding: rem(70) rem(30) rem(35);
+		}
+
+
+		.title {
+			@include typography( 700, 20, $font-default );
+			color: cl( grayBold );
+		}
+		
+		.desc {
+			@include typography( 100, 18, $font-default );
+			color: cl( black );
+			margin-top: rem(20);
+
+			@include respond-to( sm ) {
+				font-size: rem(16);
+			}
+		}
+	}
+
+}

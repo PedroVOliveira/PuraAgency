@@ -77,7 +77,15 @@
 		}
 	}	
 
+	@include m( 'about' ) {
+		@extend %not-offsetMargin;
+		@extend %offsetPadding;
+		background: linear-gradient(-140deg, cl( redSlim ), cl( pink ));
+	}
 	
+	@include m( 'about-options' ) {
+		@extend %not-offsetMargin;
+	}
 }
 
 
